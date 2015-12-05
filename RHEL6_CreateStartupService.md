@@ -73,24 +73,30 @@ sudo nano touch /etc/init.d/myApp
 	         exit 1
 	 esac
 	 ```
-2. Copier le script de démarrage dans /etc/rc.d/init.d
+	 
+2. Changer les droits:
+```ssh
+sudo chmod 755 /etc/init.d/gogs
+```
+
+3. Copier le script de démarrage dans /etc/rc.d/init.d
 ```ssh
 sudo cp /etc/init.d/myApp /etc/rc.d/init.d/myApp
 ```
 
-3. Créer un lien logique dans /etc/rc3.d
+4. Créer un lien logique dans /etc/rc3.d
 ```ssh
 sudo ln -s /etc/init.d/myApp /etc/rc3.d/S[0-9][0-9]myApp
 ```
 
 ## Test
 ---
-4. Redémarrer le serveur
+5. Redémarrer le serveur
 ```ssh
 shutdown -r now
 ```
 
-5. Tester si le service a correctement été lancé
+6. Tester si le service a correctement été lancé
 ```ssh
 service myApp status
 ```
