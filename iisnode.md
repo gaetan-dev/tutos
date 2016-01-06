@@ -1,4 +1,4 @@
-# iinode
+# iisnode
 Installer une API Node sous un IIS
 
 ## Configuration des appels à l'API
